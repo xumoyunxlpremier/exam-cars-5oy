@@ -1,8 +1,9 @@
 import { ui } from "./ui.js";
 
- export let localData = null;
+export let localData = null;
 
 export function changeLocalData(value) {
-  localData = value;
-  ui(localData);
+    localData = value;
+
+    ui(localData)
 }

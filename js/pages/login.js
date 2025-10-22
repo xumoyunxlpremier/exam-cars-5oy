@@ -1,38 +1,42 @@
-// login.js
-async function login(user) {
-  try {
-    const req = await fetch("https://json-api.uz/api/project/fn44/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
-    const res = await req.json();
-    return res;
-  } catch {
-    throw new Error("Royhattan otishda xatolik boldi");
-  }
-}
+import { createToast } from "../toast.js";
 
 const elForm = document.getElementById("form");
 
+async function login(user) {
+    try {
+        const req = await fetch("https://json-api.uz/api/project/fn44/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+        const res = await req.json()
+        return res
+    } catch {
+        throw new Error("Ro'yhatdan o'tishda xatolik bo'ldi")
+    }
+}
+
 elForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
+    evt.preventDefault()
 
-  const formData = new FormData(elForm);
-  const result = {};
-  formData.forEach((value, key) => (result[key] = value));
+    const formData = new FormData(elForm);
+    const result = {};
 
-  login(result)
-    .then((res) => {
-      // 🔥 Tokenni saqlash
-      localStorage.setItem("token", res.access.token);
-
-      // 🔥 Sahifani yo‘naltirish
-      window.location.href = "../../index.html";
+    formData.forEach((value, key) => {
+        result[key] = value;
     })
-    .catch((err) => {
-      console.error("Login xatosi:", err);
-    });
-});
+
+    login(result)
+    .then((res) => {
+        createToast("true", "Hisobga muvaffaqiyatli kirildi!")
+        setTimeout(() => {
+            localStorage.setItem("token", res.access_token)
+            window.location.href = "../../index.html"
+        }, 2000)
+        
+    })
+    .catch(() => {})
+    .finally(() => {});
+})
