@@ -28,6 +28,7 @@ elForm.addEventListener("submit", (evt) => {
         result[key] = value;
     })
 
+    createToast("loading", "Ma'lumotlaringiz yuborildi")
     login(result)
     .then((res) => {
         createToast("true", "Hisobga muvaffaqiyatli kirildi!")

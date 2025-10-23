@@ -15,22 +15,73 @@ export function ui(data) {
 
         // Buttons
         const elDeleteBtn = clone.querySelector(".js-delete");
-        const elEditBtn = clone.querySelector(".js-edit");
         const elInfoBtn = clone.querySelector(".js-info");
 
-        elTitle.innerText = element.name;
-        elYear.innerText = element.year;
-        elColor.style.background = element.color;
-        elMaxSpeed.innerText = element.maxSpeed;
-        elHorsePower.innerText = element.horsepower;
-        elFuelType.innerText = element.fuelType;
+        // elTitle.innerText = element.name;
+        const nameTrimmed = element.name?.trim() || "";
+        elTitle.innerText = nameTrimmed.length === 0 ? "no-data" : nameTrimmed;
+        // Year
+        let vaqtinchaYil = element.year;
+        try {
+            const num = Number(vaqtinchaYil);
+            if (!isNaN(num) && num > 1700 && num < 2025) {
+                elYear.innerText = num;
+            } else {
+                elYear.innerText = "no-data";
+            }
+        } catch {
+            elYear.innerText = "no-data";
+        }
+        // Color
+        // elColor.style.background = element.color;
+        const color = element.color;
+
+    if (color && color.startsWith("#")) {
+        elColor.style.background = color;
+        elColor.innerText = ""; // yozuv chiqmasin
+    } else {
+        elColor.classList.remove("color")
+        elColor.innerText = "no-data";
+    }
+
+        // Max Speed
+        const maxSpeedTrimmed = element.maxSpeed?.trim() || "";
+        if (maxSpeedTrimmed.length > 0 && maxSpeedTrimmed.endsWith("km/h")) {
+            elMaxSpeed.innerText = maxSpeedTrimmed;
+        } else {
+            elMaxSpeed.innerText = "no-data"
+        }
+        // Horse Power
+        let vaqtincha = element.horsepower;
+        try {
+            if (Number(vaqtincha) && vaqtincha > 0) {
+                elHorsePower.innerText = vaqtincha
+            }
+
+            if (vaqtincha == undefined) {
+                elHorsePower.innerText = "no-data"
+            }
+
+            if (vaqtincha.length == 0) {
+                elHorsePower.innerText = "no-data"
+            }
+        } catch {
+            elHorsePower.innerText = "no-data"
+        }
+        // Fuel Type
+        const fuelTypeTrimmed = element.fuelType?.trim() || "";
+        elFuelType.innerText = fuelTypeTrimmed.length === 0 ? "no-data" : fuelTypeTrimmed;
         
         //  ID
         elDeleteBtn.id = element.id;
-        elEditBtn.id = element.id;
         elInfoBtn.href = `/pages/details.html?id=${element.id}`;
-        elDescription.innerText = element.description;
-        
+
+        if (!element.description || element.description.trim() === "") {
+           elDescription.innerText = "no-data" 
+        } else {
+            elDescription.innerText = element.description
+        }
+
         elContainer.appendChild(clone);
     });
 }

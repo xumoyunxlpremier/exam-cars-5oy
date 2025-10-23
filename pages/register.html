@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Register</title>
-    <link rel="stylesheet" href="../css/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Agar hohlasangiz, maxsus professional purple rangini qo'shish uchun */
+        @layer utilities {
+            .bg-dark-purple {
+                background-color: #2e1a4a;
+                /* chuqur professional purple */
+            }
+
+            .text-light-purple {
+                color: #b8a1ff;
+            }
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-dark-purple min-h-screen flex flex-col items-center justify-center px-4">
+
+    <div id="toast" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50"></div>
+
+    <h1 class="registerh1 text-white text-4xl font-bold mb-8 drop-shadow-lg">Ro'yhatdan o'tish</h1>
+
+    <form id="form"
+        class="bg-white/10 backdrop-blur-md rounded-xl p-8 max-w-md w-full flex flex-col gap-6 shadow-lg border border-purple-700">
+
+        <input type="text" name="username" placeholder="Username o'ylab roping:" required
+            class="px-4 py-3 rounded-md bg-white/20 placeholder-light-purple text-white border border-purple-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition" />
+
+        <input type="password" name="password" placeholder="Parol o'ylab toping:" required
+            class="px-4 py-3 rounded-md bg-white/20 placeholder-light-purple text-white border border-purple-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition" />
+
+        <button type="submit"
+            class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-md shadow-md transition">
+            Ro'yhatdan o'tish
+        </button>
+
+        <a href="../pages/login.html" class="text-purple-300 hover:text-green-400 text-center mt-2 block transition">
+            Allaqachon ro'yhatdan o'tganman.
+        </a>
+
+    </form>
+
     <script type="module" src="../js/pages/register.js"></script>
+
 </body>
+
 </html>
