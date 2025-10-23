@@ -653,9 +653,9 @@ h1#name {
 .login-body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: #0d0f11 url("https://www.transparenttextures.com/patterns/carbon-fibre-big.png");
-  background-size: 200px;
-  color: #fff;
+  background: #021f54 url("https: //t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg");
+  background-size: 230px;
+  color: #420404;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -671,7 +671,7 @@ h1 {
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  background: linear-gradient(90deg, #858585, #e2e2e2);
+  background: linear-gradient(90deg, #5b0202, #e2e2e2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -680,15 +680,15 @@ h1 {
 form {
   width: 100%;
   max-width: 380px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(231, 226, 226, 0.05);
+  border: 1px solid rgba(95, 11, 204, 0.1);
   backdrop-filter: blur(14px);
   padding: 30px 28px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(6, 10, 100, 0.6);
 }
 
 /* Inputs */
@@ -703,10 +703,10 @@ form input {
 }
 
 form input:focus {
-  border-color: #3b82f6;
+  border-color: #080352;
   background: rgba(255, 255, 255, 0.13);
   outline: none;
-  box-shadow: 0 0 6px rgba(59, 130, 246, 0.7);
+  box-shadow: 0 0 6px rgba(3, 39, 97, 0.7);
 }
 
 /* Button */
@@ -717,13 +717,13 @@ form button {
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  background: linear-gradient(90deg, #02063a, #1d4ed8);
   color: white;
   transition: 0.25s;
 }
 
 form button:hover {
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  background: linear-gradient(90deg, #03096a, #2563eb);
   transform: translateY(-2px);
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
 }
@@ -781,14 +781,15 @@ form button:active {
 }
 
 .allaqachon {
-  color: gray;
+  color: rgb(244, 238, 238);
   width: fit-content;
   position: relative;
   text-align: end;
+  margin: auto;
 }
 
 .allaqachon:hover {
-  color: white;
+  color: rgb(240, 6, 6);
   transition: 0.5s ease;
 }
 
