@@ -1463,18 +1463,6 @@
     --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
     isolation: isolate;
   }
-  .modal-backdrop {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    display: grid;
-    align-self: stretch;
-    justify-self: stretch;
-    color: transparent;
-    z-index: -1;
-    button {
-      cursor: pointer;
-    }
-  }
   .z-\[990\] {
     z-index: 990;
   }
