@@ -408,9 +408,9 @@ dialog[open] {
 .name::after {
   content: "";
   display: block;
-  width: 50px;
+  width: 100%px;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), rgba(124,92,255,0.25));
+  background: linear-gradient(90deg, var(--accent), rgba(249, 249, 250, 0.888));
   border-radius: 4px;
   margin-top: 8px;
 }
