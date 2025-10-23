@@ -80,6 +80,36 @@ label.input {
     border-radius: 10px;
 }
 
+/* dark theme */
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Adjust buttons, inputs, and other UI elements in dark mode as needed */
+body.dark-mode .btn {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .input,
+body.dark-mode .select,
+body.dark-mode .textarea {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border-color: #444;
+}
+
+#themeToggle {
+    margin-left: 10px;
+}
+
 /* search input field */
 label.input input[type="search"] {
     background: transparent;

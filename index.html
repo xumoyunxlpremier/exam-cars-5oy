@@ -26,6 +26,9 @@
     <section class="container mt-[10px]">
         <div class="px-5">
             <div class="filter-row flex items-center gap-5 pb-5 justify-between">
+              
+
+
                 <select class="filter-btn select select-primary" id="filterTypeSelect">
                     <option disabled selected>Filter type</option>
                     <option value="year">Yil</option>
@@ -56,6 +59,9 @@
                   <kbd class="kbd kbd-sm">⌘</kbd>
                   <kbd class="kbd kbd-sm">K</kbd>
                 </label>
+                <button id="themeToggle" class="btn btn-secondary" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+                    Switch to Light Mode
+                </button>
 
                 <button id="addButton" class="addCarButton">Add car</button>
             </div>
@@ -348,6 +354,33 @@
         </div>
     </div>
 </footer>
+
+
+<script>
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    // Check if user has a preferred theme saved
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggleBtn.textContent = 'Switch to Light Mode';
+    } else {
+        themeToggleBtn.textContent = 'Switch to Dark Mode';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+            themeToggleBtn.textContent = 'Switch to Light Mode';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggleBtn.textContent = 'Switch to Dark Mode';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+
 
     <script type="module" src="./js/app.js"></script>
 </body>
